@@ -3,15 +3,22 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Header } from "../components";
+import { getEmployees } from "../reduxStore/companySlice";
+import { useAppDispatch } from "../reduxStore/hooks";
 
 const MainContainer = () => {
   const location = useLocation();
+  const dispatch = useAppDispatch();
   const [state, setState] = useState(0);
   console.log("location0", location);
 
   useEffect(() => {
     setState(location.state?.state);
   }, [location]);
+
+  useEffect(() => {
+    dispatch(getEmployees(1));
+  }, []);
 
   return (
     <div className="min-h-screen min-w-full bg-gray-50">
