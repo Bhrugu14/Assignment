@@ -1,23 +1,16 @@
 import React from "react";
 // import IcBack from "../../assets/icons/ic-back.svg";
 import { useLocation, useNavigate } from "react-router-dom";
+import { IcLogo } from "./contast";
 
 export const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   return (
-    <header className="h-16 min-w-full bg-primary flex justify-between items-center px-4 top-0 z-30 absolute">
-      <div className="flex flex-1">
-        {location.pathname.includes("/donation/details") && (
-          <div onClick={() => navigate(-1)}>
-            {/* <img src={IcBack} className="h-5 w-5 object-contain" alt="back" /> */}
-          </div>
-        )}
+    <header className="h-16 min-w-full bg-primary flex px-10 top-0 z-30 absolute">
+      <div className="font-semibold text-black text-xl  flex items-center justify-center">
+        <img src={IcLogo} alt={"pool"} />
       </div>
-      <div className="font-semibold text-black text-xl flex flex-1 items-center justify-center">
-        {"Pool"}
-      </div>
-      <div className="flex flex-1"></div>
     </header>
   );
 };

@@ -24,31 +24,39 @@ const MainContainer = () => {
     <div className="min-h-screen min-w-full bg-gray-50">
       <Header />
       <div className="flex flex-col px-10 pt-20">
-        <div className="flex justify-between w-full h-24 px-24">
-          <div className="flex flex-col items-center justify-end">
+        <div className="flex justify-between w-full items-center px-6">
+          <div className="flex flex-col items-center justify-end text-center">
             <CheckCircle fill={state > 0} />
-            <label>Step 1</label>
-            <label>Create Project</label>
           </div>
           <div
             className={`h-1 rounded ${
               state > 0 ? "bg-HeaderSideitems" : "bg-gray-600"
-            } flex flex-1 mx-2 mt-5`}
+            } flex flex-1`}
           />
-          <div className="flex flex-col items-center justify-end">
+          <div className="flex flex-col items-center justify-end text-center">
             <CheckCircle fill={state > 1} />
-            <label>Step 2</label>
-            <label>Add Team</label>
           </div>
           <div
             className={`h-1 rounded ${
               state > 1 ? "bg-HeaderSideitems" : "bg-gray-600"
-            } flex flex-1 mx-2 mt-5`}
+            } flex flex-1`}
           />
-          <div className="flex flex-col items-center justify-end">
+          <div className="flex flex-col items-center justify-end text-center">
             <CheckCircle fill={state > 2} />
-            <label>Step 3</label>
-            <label>Preview & Hire</label>
+          </div>
+        </div>
+        <div className="flex justify-between w-full items-center">
+          <div className="flex flex-col items-center justify-end text-center">
+            <label className="text-sm font-semibold">Step 1</label>
+            <label className="text-sm">Create Project</label>
+          </div>
+          <div className="flex flex-col items-center justify-end text-center">
+            <label className="text-sm font-semibold">Step 2</label>
+            <label className="text-sm">Add Team</label>
+          </div>
+          <div className="flex flex-col items-center justify-end text-center">
+            <label className="text-sm font-semibold">Step 3</label>
+            <label className="text-sm">Preview & Hire</label>
           </div>
         </div>
         <Outlet />
@@ -64,7 +72,7 @@ const CheckCircle = ({ fill }) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      className="w-24 h-24"
+      className="w-6 h-6 md:h-12 md:w-12"
     >
       <path
         fillRule="evenodd"
